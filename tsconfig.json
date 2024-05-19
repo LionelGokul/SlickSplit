@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "noImplicitAny": true,
+    "typeRoots": ["./node_modules/@types", "./types"],
+    "strict": true
+  },
+  "include": [
+    "app.ts",
+    "controllers/**/*.ts",
+    "middlewares/**/*.ts",
+    "models/**/*.ts",
+    "routes/**/*.ts",
+    "services/**/*.ts",
+    "types/**/*.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
+}

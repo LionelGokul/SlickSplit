@@ -1,0 +1,6 @@
+{
+  "env": {
+    "JWT_KEY": "super_secret_do_not_share",
+    "FRONTEND_URL": "http://localhost:5173"
+  }
+}
