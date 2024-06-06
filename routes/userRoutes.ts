@@ -2,7 +2,7 @@ import { Router } from 'express';
 
 const { check } = require('express-validator');
 const { validateReq } = require('../middlewares/reqValidator');
-const checkAuth = require('../middlewares/auth');
+const { checkAuth } = require('../middlewares/auth');
 const router = Router();
 const userController = require('../controllers/userController');
 
@@ -27,6 +27,8 @@ router.post(
   validateReq,
   userController.login,
 );
+
+router.use(checkAuth);
 
 router.post(
   '/:uid/people/add',

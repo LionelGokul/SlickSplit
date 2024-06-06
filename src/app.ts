@@ -3,17 +3,18 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 import { RequestHandler, Request, Response, NextFunction } from 'express';
 
-const userRoutes = require('./routes/userRoutes');
-const expenseRoutes = require('./routes/expenseRoutes');
-const HttpError = require('./models/httpError');
+const HttpError = require('../models/httpError');
 import serverless from 'serverless-http';
+
+const userRoutes = require('../routes/userRoutes');
+const expenseRoutes = require('../routes/expenseRoutes');
+const categoryRoutes = require('../routes/categoryRoutes');
 
 const app = express();
 
 app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded());
 const PORT = 5000;
-console.log(process.env.FRONTEND_URL);
 
 app.use(
   cors({
@@ -24,6 +25,7 @@ app.use(
 
 app.use('/api/users', userRoutes);
 app.use('/api/expenses', expenseRoutes);
+app.use('/api/categories', categoryRoutes);
 
 const notFoundHandler: RequestHandler = async (req, res, next) => {
   const error = new HttpError('Could not find this route', 404, {}, 'medium');
@@ -57,4 +59,4 @@ mongoose
     console.log(err);
   });
 
-export const handler = serverless(app);
+module.exports.handler = serverless(app);

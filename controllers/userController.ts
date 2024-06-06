@@ -92,7 +92,7 @@ const login: RequestHandler = async (req, res, next) => {
   }
 
   if (!user) {
-    const error = new HttpError('Could not find the user.', 403, {}, 'small');
+    const error = new HttpError('Invalid credentials.', 403, {}, 'small');
     return next(error);
   }
 

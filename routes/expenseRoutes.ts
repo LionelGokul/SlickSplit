@@ -3,10 +3,12 @@ const mongoose = require('mongoose');
 
 const { check } = require('express-validator');
 const { validateReq } = require('../middlewares/reqValidator');
+const { checkAuth } = require('../middlewares/auth');
 const router = Router();
 const expenseController = require('../controllers/expenseController');
 const ObjectId = mongoose.Types.ObjectId;
 
+router.use(checkAuth);
 router.post(
   '/add',
   [
