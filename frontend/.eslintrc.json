@@ -1,0 +1,37 @@
+{
+  "extends": [
+    "react-app",
+    "prettier"
+  ],
+  "plugins": ["prettier"],
+  "rules": {
+    "jsx-a11y/click-events-have-key-events": "off",
+    "prettier/prettier": ["error"],
+    "no-unused-vars": "warn",
+    "no-console": "off",
+    "func-names": "off",
+    "object-shorthand": "off",
+    "class-methods-use-this": "off",
+    "react/prop-types": 0,
+    "react/destructuring-assignment": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "react/button-has-type": 0,
+    "camelcase": "off",
+    "jsx-a11y/label-has-associated-control": 0,
+    "import/prefer-default-export": "off",
+    "consistent-return": 0,
+    "no-empty": 0,
+    "react/jsx-wrap-multilines": {"prop": "ignore"},
+    "prefer-destructuring": 0,
+    "no-underscore-dangle": "off",
+    "no-param-reassign": ["error", { "props": false }],
+    "react/jsx-props-no-spreading": [
+      "error",
+      {
+        "html": "ignore",
+        "custom": "ignore",
+        "exceptions": [""]
+      }
+    ]
+  }
+}
